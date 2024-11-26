@@ -412,6 +412,83 @@
                 window.location.href="Confirmation.html";
             }
         }
+
+
+        const nameInput = document.getElementById("name");
+        const numberInput = document.getElementById("number");
+        const emailInput = document.getElementById("email");
+        const add1Input = document.getElementById("add1");
+        const add2Input = document.getElementById("add2");
+        const pcodeInput = document.getElementById("pcode");
+        const errorMessage = document.getElementById('errorMessage');
+
+ numberInput.addEventListener("click", addCountryCode);
+numberInput.addEventListener("blur", validateAndFormatPhoneNumber);
+
+function addCountryCode() {
+    if (!numberInput.value.startsWith("(+1) - ")) {
+        numberInput.value = "(+1) - ";
+    }
+}
+
+function validateAndFormatPhoneNumber() {
+    // Initialize an empty phoneNumber variable
+    let digitsOnly = "";
+
+    // Extract digits only from the input
+    for (let char of numberInput.value) {
+        if (char >= '0' && char <= '9') {
+            digitsOnly += char;
+        }
+    }
+
+    // Check if we have exactly 10 digits after the country code
+    if (digitsOnly.length === 10) {
+        // Format the number as "(+1) - XXX - XXX- XXXX"
+        const formattedNumber = "(+1) - " + digitsOnly.substring(0, 3) + " - " + digitsOnly.substring(3, 6) + "- " + digitsOnly.substring(17);
+        numberInput.value = formattedNumber;
+
+        // Remove error state
+        numberInput.classList.remove("error");
+        errorMessage.style.display = 'none';
+    } else {
+        // Add error state if the number is not valid
+        numberInput.classList.add("error");
+        errorMessage.style.display = 'block';
+    }
+}
+
+
+        // Error Red //
+        nameInput.addEventListener("blur", validateInput);
+        numberInput.addEventListener("blur", validateInput);
+        emailInput.addEventListener("blur", validateInput);
+        add1Input.addEventListener("blur", validateInput);
+        add2Input.addEventListener("blur", validateInput);
+        pcodeInput.addEventListener("blur", validateInput);
+
+        function validateInput() {
+            if (this.value.trim() === "") {
+                this.style.borderColor = "red";
+            } else {
+                this.style.borderColor = "";
+            }
+        }
+
+        // Hover paybutton //
+        const payButton = document.getElementById("paybutton");
+
+        payButton.addEventListener("mouseover", whileHover); 
+        payButton.addEventListener("mouseout", normalHover); 
+        
+        function whileHover() {
+            payButton.style.cursor = "pointer"; 
+            payButton.style.backgroundColor = "#212121"; 
+        }
+        
+        function normalHover() {
+            payButton.style.backgroundColor = "#f7d48c";
+        }
 </script>
 </body>
 </html>
