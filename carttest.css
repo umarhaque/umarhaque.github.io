@@ -1,0 +1,38 @@
+:root{
+    --accent: #8D0054;
+    --accent-light: #EFDBE7;
+    --gold: #965A00;
+    --gold-light: #FFEFD8;
+    --page-bg: #f6f6f6;
+    --white-bg: #ffffff;
+    --text: #000000;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--page-bg);
+}
+#order-details-card{
+    width: 35%;
+    margin: 40px 40px;
+    padding: 20px 20px;
+    background: var(--white-bg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    #cupcake-details{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        img{
+            height: 150px;
+            width: 150px;
+        }
+        #name-price{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

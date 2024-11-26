@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <h1> Welcome to the Harry Potter Quiz! </h1>
+        <p>Welcome Muggle! Which year was the first Harry Potter Book released?</p>
+        <ul>
+            <li id="ans1">1997</li>
+            <li id="ans2">1999</li>
+            <li id="ans3">2003</li>
+        </ul>
+        <p id="ansbox">Correct answer will be shown here</p>
+       <!-- <input type="button" value="Reset" id="BackToZero"> -->
+        <script>
+            var l1=document.querySelector("#ans1");
+            var l2=document.querySelector("#ans2");
+            var l3=document.querySelector("#ans3");
+            var ansbox=document.querySelector("#ansbox");
+            l1.addEventListener("click", doThisWhenMouseClicked);
+            l2.addEventListener("click", doThisWhenMouseClicked);
+            l3.addEventListener("click", doThisWhenMouseClicked);
+            function doThisWhenMouseClicked(){
+                l1.style.backgroundColor="white";
+                l2.style.backgroundColor="white";
+                l3.style.backgroundColor="white";
+                var ans = this.innerText;
+                if (ans=="1997"){
+                    var correctans=document.querySelector("#ans1");
+                    correctans.style.backgroundColor="green";
+                    var ansbox=document.querySelector("#ansbox");
+                    ansbox.textContent="Your answer is "+ans+ " which is correct, well done!";
+                }
+                else if(ans=="1999"){
+                    var incorrectans=document.querySelector("#ans2");
+                    incorrectans.style.backgroundColor="red";
+                    var ansbox=document.querySelector("#ansbox");
+                    ansbox.textContent="Your answer is "+ans+ " which is incorrect, right answer is 1997";
+                }
+                else if(ans=="2003"){
+                    var incorrectans=document.querySelector("#ans3");
+                    incorrectans.style.backgroundColor="red";
+                    var ansbox=document.querySelector("#ansbox");
+                    ansbox.textContent="Your answer is "+ans+ " which is incorrect, right answer is 1997";
+                }
+                else{
+                    var anstext=document.querySelector("#ansbox");
+                    anstext.textContent="Don't write gibberish";
+                    anstext.style.fontSize="20px";
+                    anstext.style.color="red";
+                    anstext.style.fontWeight="bold";
+                }
+                // var button=document.querySelector("#BackToZero");
+                // button.addEventListener("click", doThisWhenClicked);
+                // function doThisWhenClicked(){
+                //     l1.style.backgroundColor="white";
+                //     l2.style.backgroundColor="white";
+                //     l3.style.backgroundColor="white";
+                //     // ansbox.textContent="Correct answer will be shown here";
+                // }
+            }
+            
+        
+            // var ans= prompt("Which year was the first Harry Potter Book released?");
+            // if(ans=="1997"){
+            //     var correctans=document.querySelector("#ans1");
+            //     correctans.style.backgroundColor="green";
+            //     var anstext=document.querySelector("#ansbox");
+            //     anstext.textContent="Your answer is "+ans+ " which is correct, well done!";
+            // }
+            // else if(ans=="1999"){
+            //     var incorrectans=document.querySelector("#ans2");
+            //     incorrectans.style.backgroundColor="red";
+            //     var anstext=document.querySelector("#ansbox");
+            //     anstext.textContent="Your answer is "+ans+ " which is incorrect, right answer is 1997";
+            // }
+            // else if(ans=="2003"){
+            //     var incorrectans=document.querySelector("#ans3");
+            //     incorrectans.style.backgroundColor="red";
+            //     var anstext=document.querySelector("#ansbox");
+            //     anstext.textContent="Your answer is "+ans+ " which is incorrect, right answer is 1997";
+            // }
+            // else{
+            //     var anstext=document.querySelector("#ansbox");
+            //     anstext.textContent="Don't write gibberish";
+            //     anstext.style.fontSize="20px";
+            //     anstext.style.color="red";
+            //     anstext.style.fontWeight="bold";
+            // }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toronto Cupcakes - Cart</title>
+  <link rel="stylesheet" href="CartPage.css">
+  <script src="https://kit.fontawesome.com/5f673fb283.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+  <div id="header-content">
+      <div id="logo">
+          <i class="fa-solid fa-cake-candles"></i>
+          <p>TorontoCupcake</p>
+      </div>
+      <div id="pages-icons">
+          <a id="navpage1" href="">Cupcakes</a>
+          <a id="navpage2" href="">About us</a>
+          <a id="navpage3" href="">Special orders</a>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div id="cart">
+              <a href="Checkout.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+              <p id="cart-value">0</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Back button -->
+<div id="back-button">
+  <i class="fa-solid fa-arrow-left"></i>
+  <p>Back</p>
+</div>
+
+<div class="main-container">
+  <!-- Your Cart Section -->
+  <div class="cart-section">
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+      <!-- Empty JS div -->
+       <div id="jspopulator">
+        
+       </div>
+
+      <!-- <div class="cart-item">
+        <img src="chocolate cupcake.jpg" alt="Chocolate Cupcake">
+        <div class="item-details">
+          <h4>Chocolate Cupcake</h4>
+          <p>$3.50 each</p>
+        </div>
+        <div class="item-quantity">
+          <button onclick="updateQuantity('chocolate', -1)">-</button>
+          <span id="quantity-chocolate">3</span>
+          <button onclick="updateQuantity('chocolate', 1)">+</button>
+        </div>
+      </div>
+
+      Vanilla Cupcake
+      <div class="cart-item">
+        <img src="vanilla.jpg" alt="Vanilla Cupcake">
+        <div class="item-details">
+          <h4>Vanilla Cupcake</h4>
+          <p>$3.00 each</p>
+        </div>
+        <div class="item-quantity">
+          <button onclick="updateQuantity('vanilla', -1)">-</button>
+          <span id="quantity-vanilla">1</span>
+          <button onclick="updateQuantity('vanilla', 1)">+</button>
+        </div>
+      </div> -->
+
+  
+    </div>
+  </div>
+
+  <div class="bill-section">
+    <h2>Bill Summary</h2>
+    <div class="bill-summary">
+      <div>
+        <span>Item total</span>
+        <span id="item-total">$0.00</span>
+      </div>
+      <div>
+        <span>HST (13%)</span>
+        <span id="hst">$0.00</span>
+      </div>
+      <div>
+        <span>Platform fee</span>
+        <span>$0.80</span>
+      </div>
+      <hr>
+      <div>
+        <span><strong>Total</strong></span>
+        <span id="total">$0.80</span>
+      </div>
+    </div>
+    <button class="checkout-btn" onclick="location.href='Checkout.html';">Proceed to Checkout</button>
+  </div>
+  
+</div>
+
+<!-- Footer -->
+<div class="footer">
+
+  <div class="footer_logo"> 
+    <i class="fa-solid fa-cake-candles"></i>
+    <p>Toronto Cupcake</p>
+  </div>
+  <div class="city">
+    <p>Downtown, Toronto.</p>
+  </div>
+  <div class="footer_links">
+    <a><p>Contact Us</p></a>
+    <a><p>FAQs</p></a>
+    <a><p>Resources</p></a>
+    <a><p>Privacy Policy</p></a>
+  </div>
+  <div class="icons">
+    <a><i class="fa-brands fa-instagram"></i></a>
+    <a><i class="fa-brands fa-facebook"></i></a>
+    <a><i class="fa-brands fa-x-twitter"></i></a>
+  </div>
+  <div class="c">
+    <i class="fa-regular fa-copyright"></i>
+    <p>2023 Toronto Cupcakes. All Rights Reserved.</p>
+  </div>
+</div>
+
+<script>
+  // Startup cart value
+  function startup(){
+    if(sessionStorage.getItem("cartvalue") == null){
+      document.querySelector("#cart-value").textContent = "0";
+    }else{
+      document.querySelector("#cart-value").textContent = sessionStorage.getItem("cartvalue");
+    }
+    var myDiv = document.getElementById("jspopulator");
+            // Loop through all keys in sessionStorage
+            for (let i = 0; i < sessionStorage.length; i++) {
+                // Get the key and value
+                let key = sessionStorage.key(i);
+                let value = sessionStorage.getItem(key);
+                // Generate HTML for each key-value pair
+                if(key=="chocolate"){
+                    let htmlContent = `<div class="cart-item">
+        <img src="chocolate cupcake.jpg" alt="Chocolate Cupcake">
+        <div class="item-details">
+          <h4>Chocolate Cupcake</h4>
+          <p>$3.50 each</p>
+        </div>
+        <div class="item-quantity">
+          <button onclick="updateQuantity('chocolate', -1)">-</button>
+          <span id="quantity-chocolate">${value}</span>
+          <button onclick="updateQuantity('chocolate', 1)">+</button>
+        </div>
+      </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="vanilla"){
+                    let htmlContent = `<div class="cart-item">
+        <img src="vanilla.jpg" alt="Vanilla Cupcake">
+        <div class="item-details">
+          <h4>Vanilla Cupcake</h4>
+          <p>$3.0 each</p>
+        </div>
+        <div class="item-quantity">
+          <button onclick="updateQuantity('vanilla', -1)">-</button>
+          <span id="quantity-vanilla">${value}</span>
+          <button onclick="updateQuantity('vanilla', 1)">+</button>
+        </div>
+      </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="strawberry"){
+                    let htmlContent = `<div class="cart-item">
+        <img src="strawberry.jpg" alt="Strawberry Cupcake">
+        <div class="item-details">
+          <h4>Strawberry Cupcake</h4>
+          <p>$4.50 each</p>
+        </div>
+        <div class="item-quantity">
+          <button onclick="updateQuantity('strawberry', -1)">-</button>
+          <span id="quantity-strawberry">${value}</span>
+          <button onclick="updateQuantity('strawberry', 1)">+</button>
+        </div>
+      </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="pineapple"){
+                    let htmlContent = `<div class="cart-item">
+        <img src="pineapple.jpg" alt="Pineapple Cupcake">
+        <div class="item-details">
+          <h4>Pineapple Cupcake</h4>
+          <p>$5.0 each</p>
+        </div>
+        <div class="item-quantity">
+          <button onclick="updateQuantity('pineapple', -1)">-</button>
+          <span id="quantity-pineapple">${value}</span>
+          <button onclick="updateQuantity('pineapple', 1)">+</button>
+        </div>
+      </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+            }
+  }
+  window.onload = startup;
+
+  // Static quantities
+  let cupcakeQuantities = {
+    chocolate: parseInt(sessionStorage.getItem("chocolate")),
+    vanilla: parseInt(sessionStorage.getItem("vanilla")),
+    strawberry: parseInt(sessionStorage.getItem("strawberry")),
+    pineapple: parseInt(sessionStorage.getItem("pineapple"))
+  };
+
+  // Prices for each type of cupcake
+  const prices = {
+    chocolate: 3.5,
+    vanilla: 3.0,
+    strawberry: 4.5,
+    pineapple: 5.0
+  };
+
+  const PLATFORM_FEE = 0.80;
+  const HST_RATE = 0.13;
+
+  // Function to update quantities and recalculate the bill
+  function updateQuantity(type, change) {
+    const maxQuantity = 5;
+    const minQuantity = 0;
+
+    // Update the quantity
+    cupcakeQuantities[type] = Math.max(
+      minQuantity,
+      Math.min(maxQuantity, cupcakeQuantities[type] + change)
+    );
+
+    // Update the quantity display
+    document.getElementById(`quantity-${type}`).textContent = cupcakeQuantities[type];
+
+    // Updating session values and sessionStorage & cart value
+    var quantity = parseInt(sessionStorage.getItem(`${type}`));
+    quantity = quantity + change;
+    sessionStorage.setItem(`${type}`, quantity.toString());
+    var cartvalue = parseInt(sessionStorage.getItem("cartvalue"));
+    cartvalue = cartvalue + change;
+    sessionStorage.setItem("cartvalue", cartvalue.toString());
+    document.querySelector("#cart-value").textContent = cartvalue.toString();
+
+    // Recalculate the bill
+    updateBill();
+  }
+
+  // Function to calculate and update the bill
+  function updateBill() {
+    let itemTotal = 0;
+
+    // Calculate item total
+    for (const [type, quantity] of Object.entries(cupcakeQuantities)) {
+      itemTotal += prices[type] * quantity;
+    }
+
+    const hst = itemTotal * HST_RATE;
+    const total = itemTotal + hst + PLATFORM_FEE;
+    var itemtotal = parseInt(itemTotal);
+    var totalpricestring = parseInt(total);
+    var hststring = parseInt(hst);
+    sessionStorage.setItem("itemtotal", `${itemtotal}`);
+    sessionStorage.setItem("totalprice", `${totalpricestring}`);
+    sessionStorage.setItem("hst", `${hststring}`);
+    
+    // Update the bill summary
+    document.getElementById("item-total").textContent = `$${itemTotal.toFixed(2)}`;
+    document.getElementById("hst").textContent = `$${hst.toFixed(2)}`;
+    document.getElementById("total").textContent = `$${total.toFixed(2)}`;
+  }
+  
+
+  updateBill();
+
+  // Back redirection
+        var back = document.querySelector("#back-button");
+        back.addEventListener("click", clickRedirect);
+        function clickRedirect(){
+            if(this.id=="back-button"){
+                window.location.href="menu.html"
+            }
+        }
+</script>
+
+</body>
+</html>

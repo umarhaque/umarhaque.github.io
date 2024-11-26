@@ -1,0 +1,103 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Click "add to cart" to add item</h1>
+        <p id="album1">Hybrid Theory</p>
+        <p>Price: $10</p>
+        <input type="button" value="Add item 1 to cart" id="album1Button">
+        <p id="album2">Meteora</p>
+        <p>Price: $15</p>
+        <input type="button" value="Add item 2 to cart" id="album2Button">
+        <p id="album3">Living Things</p>
+        <p>Price: $20</p>
+        <input type="button" value="Add item 3 to cart" id="album3Button">
+        <p>Cart Total:</p>
+        <p id="cartTotal">0</p>
+        <p>Enter Payment Amount:</p>
+        <input type="number" placeholder="Enter Amount" id="inputAmount">
+        <input type="button" value="Confirm Purchase" id="confirmPurchase">
+        <p id="response"></p>
+        <script>
+            var album1=document.querySelector("#album1");
+            var album2=document.querySelector("#album2");
+            var album3=document.querySelector("#album3");
+            var button1=document.querySelector("#album1Button");
+            var button2=document.querySelector("#album2Button");
+            var button3=document.querySelector("#album3Button");
+            var confirmButton=document.querySelector("#confirmPurchase");
+            album1.addEventListener("mouseover", mouseoverEvent);
+            album1.addEventListener("mouseout", mouseoutEvent);
+            album2.addEventListener("mouseover", mouseoverEvent);
+            album2.addEventListener("mouseout", mouseoutEvent);
+            album3.addEventListener("mouseover", mouseoverEvent);
+            album3.addEventListener("mouseout", mouseoutEvent);
+            button1.addEventListener("click", addEvent);
+            button2.addEventListener("click", addEvent);
+            button3.addEventListener("click", addEvent);
+            confirmButton.addEventListener("click", confirmEvent);
+            function mouseoverEvent(){
+                if(this.id=="album1"){
+                    this.textContent="Hybrid Theory is the debut studio album by American rock band Linkin Park, released on October 24, 2000, by Warner Bros. Records. Hybrid Theory takes its title from the previous name of the band as well as the concepts of music theory and combining different styles.";
+                }
+                else if(this.id=="album2"){
+                    this.textContent="Meteora is the second studio album by American rock band Linkin Park. It was released on March 25, 2003, through Warner Bros. Records, following Reanimation, a collaboration album which featured remixes of songs included on their 2000 debut studio album Hybrid Theory.";
+                }
+                else{
+                    this.textContent="Living Things (stylized as LIVING THINGS) is the fifth studio album by the American rock band Linkin Park. It was released under Warner Records and Machine Shop Records on June 20, 2012, in Japan, and throughout the rest of the world during the following week.";
+                }
+            }
+            function mouseoutEvent(){
+                if(this.id=="album1"){
+                    this.textContent="Hybrid Theory";
+                }
+                else if(this.id=="album2"){
+                    this.textContent="Meteora";
+                }
+                else{
+                    this.textContent="Living Things";
+                }
+            }
+            function addEvent(){
+                var total=document.querySelector("#cartTotal");
+                if(this.id=="album1Button"){
+                    var cartAmount=parseInt(total.textContent);
+                    var updatedAmount=cartAmount+10;
+                    total.textContent=updatedAmount.toString();
+                    button1.disabled=true;
+                }
+                else if(this.id=="album2Button"){
+                    var cartAmount=parseInt(total.textContent);
+                    var updatedAmount=cartAmount+15;
+                    total.textContent=updatedAmount.toString();
+                    button2.disabled=true;
+                }
+                else{
+                    var cartAmount=parseInt(total.textContent);
+                    var updatedAmount=cartAmount+20;
+                    total.textContent=updatedAmount.toString();
+                    button3.disabled=true;
+                }
+            }
+            function confirmEvent(){
+                var input=document.querySelector("#inputAmount");
+                var inputAmount=input.value;
+                var cart=document.querySelector("#cartTotal");
+                var cartAmount=parseInt(cart.textContent);
+                if(cartAmount==inputAmount){
+                    var response=document.querySelector("#response");
+                    response.textContent="Purchase complete!";
+                    response.style.color="green";
+                    response.style.fontWeight="bold";
+                }
+                else{
+                    var response=document.querySelector("#response");
+                    response.textContent="Payment is not equal to total price.";
+                    response.style.color="red";
+                    response.style.fontWeight="bold";
+                }
+            }
+        </script>
+    </body>
+</html>

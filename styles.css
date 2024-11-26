@@ -1,0 +1,251 @@
+
+:root{
+    --accent: #8D0054;
+    --accent-light: #EFDBE7;
+    --gold: #965A00;
+    --gold-light: #FFEFD8;
+    --page-bg: #f6f6f6;
+    --white-bg: #ffffff;
+    --text: #000000;
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: poppins, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+#header{
+    background: var(--accent);
+    height: 80px;
+    #header-content{
+        display: flex;
+        flex-direction: row;
+        color: var(--white-bg);
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 4%;
+        margin-right: 4%;
+        height: 100%;
+        #logo{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            font-size: 28px;
+            font-family: "Lobster", sans-serif;
+        }
+        #pages-icons{
+            font-size: 16px;
+            font-family: "poppins", sans-serif;
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            font-weight: 500;
+            align-items: center;
+            a{
+                color: var(--white-bg);
+                text-decoration: none;
+            }
+            i{
+                color: var(--white-bg);
+            }
+            #cart{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Hero Section */
+.hero {
+    text-align:left;
+    padding: 3rem 1rem;
+    color: #000;
+}
+
+.hero h2 {
+    font-size: 2rem;
+}
+
+.hero .cta-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #8D0054;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Styles for the background image and container */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    z-index: 1;
+}
+
+.text-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-overlay p {
+    font-size: 1.2rem;
+}
+/* Button styles */
+.order-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #b30068; /* Initial button color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.2s ease; /* Smooth scale transition */
+}
+
+/* Add a smooth transition effect */
+.order-button:hover {
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Offers Section */
+.offers {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column; 
+  background-color: #880e4f; 
+  color: white;
+  padding: 20px;
+  
+}
+
+.footer_logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1em; 
+  font-family: "Lobster", sans-serif;
+  font-size: 20px;
+}
+
+.city {
+  text-align: left;
+ 
+  top: 15%;
+  left: 2%;
+  font-size: 0.9em;
+}
+
+.c {
+  text-align: left;
+  position: absolute;
+  bottom: 1%;
+  left: 2%;
+  font-size: 0.7em;
+
+}
+
+.footer_links {
+  margin: 0.5%;
+}
+.footer_links a {
+  margin: 1%;
+  color: white;
+  float: right;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.icons {
+  margin-top: 10px;
+}
+
+.icons a {
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: white;
+  float: right;
+}
+
+

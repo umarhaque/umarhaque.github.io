@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Cupcake | Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://kit.fontawesome.com/5f673fb283.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div id="header-content">
+            <div id="logo">
+                <i class="fa-solid fa-cake-candles"></i>
+                <p>TorontoCupcake</p>
+            </div>
+            <div id="pages-icons">
+                <a id="navpage1" href="menu.html">Cupcakes</a>
+                <a id="navpage2" href="">About us</a>
+                <a id="navpage3" href="">Special orders</a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div id="cart">
+                    <a href="CartPage.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <p id="cart-value">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back button -->
+    <div id="back-button">
+        <i class="fa-solid fa-arrow-left"></i>
+        <p>Back</p>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div id="breadcrumbs">
+        <a href="torontocupcakes.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="">Menu page</a>
+    </div>
+
+    <!-- Filter section -->
+    <div id="filters">
+        <p>Filters</p>
+        <div id="chip-container">
+            <div id="filter-chip">
+                <p>Cake base</p>
+            </div>
+            <div id="filter-chip">
+                <p>Frosting</p>
+            </div>
+            <div id="filter-chip">
+                <p>Rating</p>
+            </div>
+            <div id="filter-chip">
+                <p>Calories</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu section 1 header - Always available -->
+    <div id="menu-section1-header">
+        <p>Always available</p>
+    </div>
+
+    <!-- Cupcake card -->
+    <div id="cupcake-grid">
+        <div id="cupcake">
+            <div id="imagecontainer">
+                <img src="chocolate cupcake.jpg" alt="">
+            </div>
+            <div id="cupcake-info">
+                <div id="cupcake-name-price">
+                    <p id="cupcake-name"> Chocolate Cupcake</p>
+                    <p id="cupcake-price">$3.5</p>
+                </div>
+                <div id="cupcake-nutrition">
+                    <p id="cupcake-calories">360 kcal</p>
+                    <p id="nutrition-info">Nutrition info</p>
+                </div>
+                <div id="cupcake-tags">
+                    <div id="rating-tag">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5</p>
+                    </div>
+                    <div id="special-tag">
+                        <p>Bestseller</p>
+                    </div>
+                </div>
+                <div id="cupcake-cart-button">
+                    <input type="button" value="ADD TO CART" id="chocolate">
+                </div>
+            </div>
+        </div>
+        <div id="cupcake">
+            <div id="imagecontainer">
+                <img src="strawberry.jpg" alt="">
+            </div>
+            <div id="cupcake-info">
+                <div id="cupcake-name-price">
+                    <p id="cupcake-name"> Strawberry Cupcake</p>
+                    <p id="cupcake-price">$4.5</p>
+                </div>
+                <div id="cupcake-nutrition">
+                    <p id="cupcake-calories">400 kcal</p>
+                    <p id="nutrition-info">Nutrition info</p>
+                </div>
+                <div id="cupcake-tags">
+                    <div id="rating-tag">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5</p>
+                    </div>
+                    <!-- <div id="special-tag">
+                        <p>Bestseller</p>
+                    </div> -->
+                </div>
+                <div id="cupcake-cart-button">
+                    <input type="button" value="ADD TO CART" id="strawberry">
+                </div>
+            </div>
+        </div>
+        <div id="cupcake">
+            <div id="imagecontainer">
+                <img src="vanilla.jpg" alt="">
+            </div>
+            <div id="cupcake-info">
+                <div id="cupcake-name-price">
+                    <p id="cupcake-name"> Vanilla Cupcake</p>
+                    <p id="cupcake-price">$3.0</p>
+                </div>
+                <div id="cupcake-nutrition">
+                    <p id="cupcake-calories">320 kcal</p>
+                    <p id="nutrition-info">Nutrition info</p>
+                </div>
+                <div id="cupcake-tags">
+                    <div id="rating-tag">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5</p>
+                    </div>
+                    <div id="special-tag">
+                        <p>Bestseller</p>
+                    </div>
+                </div>
+                <div id="cupcake-cart-button">
+                    <input type="button" value="ADD TO CART" id="vanilla">
+                </div>
+            </div>
+        </div>
+        <div id="cupcake">
+            <div id="imagecontainer">
+                <img src="pineapple.jpg" alt="">
+            </div>
+            <div id="cupcake-info">
+                <div id="cupcake-name-price">
+                    <p id="cupcake-name"> Pineapple Cupcake</p>
+                    <p id="cupcake-price">$5.0</p>
+                </div>
+                <div id="cupcake-nutrition">
+                    <p id="cupcake-calories">380 kcal</p>
+                    <p id="nutrition-info">Nutrition info</p>
+                </div>
+                <div id="cupcake-tags">
+                    <div id="rating-tag">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5</p>
+                    </div>
+                    <!-- <div id="special-tag">
+                        <p>Bestseller</p>
+                    </div> -->
+                </div>
+                <div id="cupcake-cart-button">
+                    <input type="button" value="ADD TO CART" id="pineapple">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+		<div class="footer_logo"> 
+			<i class="fa-solid fa-cake-candles"></i>
+			<p>Toronto Cupcake</p>
+		</div>
+		<div class="city">
+			<p>Downtown, Toronto.</p>
+		</div>
+		<div class="footer_links">
+		  <a><p>Contact Us</p></a>
+		  <a><p>FAQs</p></a>
+		  <a><p>Resources</p></a>
+		  <a><p>Privacy Policy</p></a>
+		</div>
+		<div class="icons">
+		  <a><i class="fa-brands fa-instagram"></i></a>
+		  <a><i class="fa-brands fa-facebook"></i></a>
+		  <a><i class="fa-brands fa-x-twitter"></i></a>
+		</div>
+		<div class="c">
+			<i class="fa-regular fa-copyright"></i>
+			<p>2023 Toronto Cupcakes. All Rights Reserved.</p>
+		</div>
+	</div>
+    <script>
+        var choccupcake = document.querySelector("#chocolate");
+        var sbcupcake = document.querySelector("#strawberry");
+        var vancupcake = document.querySelector("#vanilla");
+        var pincupcake = document.querySelector("#pineapple");
+        choccupcake.addEventListener("click", cartData);
+        sbcupcake.addEventListener("click", cartData);
+        vancupcake.addEventListener("click", cartData);
+        pincupcake.addEventListener("click", cartData);
+        function cartData(){
+            // Checking whether session has a cart key
+            // If no cart key then create key and add 1 to it
+            // else increase cart value by 1 and insert next to cart icon p tag
+            if(sessionStorage.getItem("cartvalue") == null){
+                sessionStorage.setItem("cartvalue", "1")
+                document.querySelector("#cart-value").textContent = "1";
+            }else{
+                var cartvalue = parseInt(sessionStorage.getItem("cartvalue"));
+                cartvalue += 1;
+                sessionStorage.setItem("cartvalue", cartvalue.toString());
+                document.querySelector("#cart-value").textContent = cartvalue.toString();
+            }
+            // Seprate conditional block for chocolate cupcake buttonclick
+            if(this.id=="chocolate"){
+                if(sessionStorage.getItem("chocolate") == null){
+                    sessionStorage.setItem("chocolate","1")
+                }else{
+                    var quantity = parseInt(sessionStorage.getItem("chocolate"));
+                    quantity += 1;
+                    sessionStorage.setItem("chocolate", quantity.toString());
+                }
+            }
+            // Seprate conditional block for strawberry cupcake buttonclick
+            if(this.id=="strawberry"){
+                if(sessionStorage.getItem("strawberry") == null){
+                    sessionStorage.setItem("strawberry","1")
+                }else{
+                    var quantity = parseInt(sessionStorage.getItem("strawberry"));
+                    quantity += 1;
+                    sessionStorage.setItem("strawberry", quantity.toString());
+                }
+            }
+            // Seprate conditional block for vanilla cupcake buttonclick
+            if(this.id=="vanilla"){
+                if(sessionStorage.getItem("vanilla") == null){
+                    sessionStorage.setItem("vanilla","1")
+                }else{
+                    var quantity = parseInt(sessionStorage.getItem("vanilla"));
+                    quantity += 1;
+                    sessionStorage.setItem("vanilla", quantity.toString());
+                }
+            }
+            // Seprate conditional block for pineapple cupcake buttonclick
+            if(this.id=="pineapple"){
+                if(sessionStorage.getItem("pineapple") == null){
+                    sessionStorage.setItem("pineapple","1")
+                }else{
+                    var quantity = parseInt(sessionStorage.getItem("pineapple"));
+                    quantity += 1;
+                    sessionStorage.setItem("pineapple", quantity.toString());
+                }
+            }
+        }
+
+        // Function to check value of cart sessionStorage key on startup to populate cart value
+        function startup(){
+            if(sessionStorage.getItem("cartvalue") == null){
+                document.querySelector("#cart-value").textContent = "0";
+            }else{
+                document.querySelector("#cart-value").textContent = sessionStorage.getItem("cartvalue");
+            }
+        }
+        window.onload = startup;
+
+        // Function for navbar links - adds underline on hover
+        var page1 = document.querySelector("#navpage1");
+        page1.addEventListener("mouseover", hover);
+        page1.addEventListener("mouseout", rest);
+        var page2 = document.querySelector("#navpage2");
+        page2.addEventListener("mouseover", hover);
+        page2.addEventListener("mouseout", rest);
+        var page3 = document.querySelector("#navpage3");
+        page3.addEventListener("mouseover", hover);
+        page3.addEventListener("mouseout", rest);
+        function hover(){
+            if(this.id=="navpage1"){
+                page1.style.borderBottom="2px solid white";
+            }
+            if(this.id=="navpage2"){
+                page2.style.borderBottom="2px solid white";
+            }
+            if(this.id=="navpage3"){
+                page3.style.borderBottom="2px solid white";
+            }
+        }
+        function rest(){
+            if(this.id=="navpage1"){
+                page1.style.borderBottom="0px";
+            }
+            if(this.id=="navpage2"){
+                page2.style.borderBottom="0px";
+            }
+            if(this.id=="navpage3"){
+                page3.style.borderBottom="0px";
+            }
+        }
+
+        // Cupcake card redirection
+        var cupcakecard = document.querySelector("#cupcake");
+        var cupcakebutton = document.querySelector("#chocolate")
+        cupcakecard.addEventListener("click", clickRedirect);
+        cupcakebutton.addEventListener("click", clickRedirect);
+        var back = document.querySelector("#back-button");
+        back.addEventListener("click", clickRedirect);
+        function clickRedirect(){
+            if(this.id=="back-button"){
+                window.location.href="torontocupcakes.html"
+            }else if(this.id=="chocolate"){
+                console.log("break");
+            }else{
+                window.location.href="ProductPage.html";
+            }
+        }
+    </script>
+</body>
+</html>

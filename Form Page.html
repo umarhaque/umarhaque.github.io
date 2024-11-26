@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Custom Order Request</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5f673fb283.js" crossorigin="anonymous"></script>
+
+
+
+  <style>
+    /* Header */
+    :root{
+    --accent: #8D0054;
+    --accent-light: #EFDBE7;
+    --gold: #965A00;
+    --gold-light: #FFEFD8;
+    --page-bg: #f6f6f6;
+    --white-bg: #ffffff;
+    --text: #000000;
+}
+#header{
+  
+    background: var(--accent);
+    height: 80px;
+    #header-content{
+        display: flex;
+        flex-direction: row;
+        color: var(--white-bg);
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 4%;
+        margin-right: 4%;
+        height: 100%;
+        #logo{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            font-size: 28px;
+            font-family: "Lobster", sans-serif;
+            align-items: center;
+        }
+        #pages-icons{
+            font-size: 16px;
+            font-family: "poppins", sans-serif;
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            font-weight: 500;
+            align-items: center;
+            a{
+                color: var(--white-bg);
+                text-decoration: none;
+            }
+            i{
+                color: var(--white-bg);
+            }
+            #cart{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    }
+}
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+     #emailError {
+      display: none;
+      color: red;
+      font-size: 12px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 40px 20px;
+    }
+
+    .form-container {
+      width: 60%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .info-container {
+      width: 35%;
+      padding: 20px;
+      background-color: #f9f1f7;
+      border-radius: 5px;
+    }
+
+    .form-container input, 
+    .form-container textarea, 
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      background-color: #99005d;
+      color: white;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #7d0047;
+    }
+     
+    
+    h2 {
+      color: #99005d;
+    }
+    h3 {
+      color: #99005d;
+    }
+
+
+
+#back-button{
+    font-family: "Poppins", sans-serif;
+    margin-left: 4%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.7%;
+    align-items: center;
+    i{
+        display: inline;
+    }
+    a{
+        display: inline;
+        font-size: 14px;
+        color: black;
+    text-decoration: none;                
+    }
+}
+
+/* Breadcrumbs */
+#breadcrumbs{
+    font-family: "Poppins", sans-serif;
+    margin-left: 4%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.7%;
+    align-items: center;
+    i{
+        display: inline;
+    }
+    a{
+        display: inline;
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+
+ /*footer*/
+
+ /*footer*/
+    .footer {
+  display: flex;
+  flex-direction: column; 
+  background-color: #880e4f; 
+  color: white;
+  padding: 10px;
+  
+}
+
+.footer_logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1em; 
+  font-family: "Lobster", sans-serif;
+  font-size: 20px;
+}
+
+.city {
+  text-align: left;
+ 
+  top: 20%;
+  left: 2%;
+  font-size: 0.9em;
+}
+
+.c {
+  text-align: left;
+  position: absolute;
+    left: 6%;
+  font-size: 0.7em;
+
+}
+
+.footer_links {
+  margin: 0.5%;
+}
+.footer_links a {
+  margin: 1%;
+  color: white;
+  float: right;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.icons {
+  margin-top: 10px;
+}
+
+.icons a {
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: white;
+  float: right;
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<!-- Header -->
+    <div id="header">
+        <div id="header-content">
+            <div id="logo">
+                <i class="fa-solid fa-cake-candles"></i>
+                <p href="torontocupcakes.html">TorontoCupcake</p>
+            </div>
+            <div id="pages-icons">
+                <a id="navpage1" href="">Cupcakes</a>
+                <a id="navpage2" href="">About us</a>
+                <a id="navpage3" href="Form Page.html">Special orders</a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <!-- <div id="cart">
+                    <a href="CartPage.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <p id="cart-value">0</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+<!-- <div id="back-button">
+    <i class="fa-solid fa-arrow-left"></i>
+    <a href>Back</a>
+</div> -->
+
+<!-- <div id="breadcrumbs">
+        <a href="">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="">Menu</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="">Cart</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="">Checkout</a>
+        <i class="fa-solid fa-chevron-right"></i>
+    </div> -->
+
+ 
+<div class="container">
+
+  <!-- Form Section -->
+  <div class="form-container">
+    <h2>Custom Order Request Form</h2>
+    <form id="customOrderForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Eg. Jack Holmes" required>
+
+      <label for="phone">Your Phone Number</label>
+      <input type="tel" id="phone" placeholder="Eg. 6472838470" required>
+
+      <label for="email">Your Email</label>
+      <input type="text" id="email" placeholder="Eg. abc@xyz.com" required>
+      <div id="emailError" class="error">Please enter a valid email address.</div>
+
+      <label for="orderRequest">Your Order Request</label>
+      <textarea id="orderRequest" rows="4" placeholder="Eg. Describe your custom order details here..." required></textarea>
+
+      <label for="upload">Upload Image for Reference</label>
+      <input type="file" id="upload">
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+
+
+
+  <!-- Info Section -->
+  <div class="info-container">
+    <h3>HOW IT WORKS?</h3>
+    <p>
+      Once we get your request, our team will either accept it or reject it based on your request, so make sure to add enough detail. 
+      Once accepted, we will call you in 2–4 business days to discuss it in detail, so make sure to have at least 2 weeks between when 
+      you send your order request and when you need it prepared.
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+
+  <div class="footer_logo"> 
+    <i class="fa-solid fa-cake-candles"></i>
+    <p>Toronto Cupcake</p></div>
+  <div class="city">Downtown, Toronto.</div>
+  
+  <div class="footer_links">
+    <a><p>Contact Us</p></a>
+    <a><p>FAQs</p></a>
+    <a><p>Resources</p></a>
+    <a><p>Privacy Policy</p></a>
+  </div>
+  <div class="icons">
+    <a><i class="fa-brands fa-instagram"></i></a>
+    <a><i class="fa-brands fa-facebook"></i></a>
+    <a><i class="fa-brands fa-x-twitter"></i></a>
+  </div>
+ 
+</div>
+
+
+<script>
+
+  document.getElementById("customOrderForm").addEventListener("submit", function () {
+    const emailField = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+    const emailValue = emailField.value;
+
+    // Prevent the form from submitting
+    event.preventDefault(); 
+
+    // Initially hide the error message
+    emailError.style.display = "none";
+    emailField.style.borderColor = ""; 
+
+    // Validate email format 
+    if (emailValue.includes("@")) {
+      if (emailValue.includes(".")) {
+        
+        alert("Your custom order request has been submitted successfully.");
+
+
+      } else {
+        // Email is invalid so show message
+        emailField.style.borderColor = "red"; 
+        emailError.textContent = "Please enter a valid email address.";
+        emailError.style.display = "block"; 
+      }
+
+
+    } else {
+      // Email is invalid so show message
+      emailField.style.borderColor = "red"; 
+      emailError.textContent = "Please enter a valid email address.";
+      emailError.style.display = "block"; 
+    }
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

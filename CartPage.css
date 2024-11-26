@@ -1,0 +1,272 @@
+:root{
+  --accent: #8D0054;
+  --accent-light: #EFDBE7;
+  --gold: #965A00;
+  --gold-light: #FFEFD8;
+  --page-bg: #f6f6f6;
+  --white-bg: #ffffff;
+  --text: #000000;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+}
+
+#header{
+  background: var(--accent);
+  height: 80px;
+  #header-content{
+      display: flex;
+      flex-direction: row;
+      color: var(--white-bg);
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 4%;
+      margin-right: 4%;
+      height: 100%;
+      #logo{
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          font-size: 28px;
+          font-family: "Lobster", sans-serif;
+          align-items: center;
+      }
+      #pages-icons{
+          font-size: 16px;
+          font-family: "poppins", sans-serif;
+          display: flex;
+          flex-direction: row;
+          gap: 40px;
+          font-weight: 500;
+          align-items: center;
+          a{
+              color: var(--white-bg);
+              text-decoration: none;
+          }
+          i{
+              color: var(--white-bg);
+          }
+          #cart{
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              align-items: center;
+          }
+      }
+  }
+}
+
+/* Back button */
+#back-button{
+  font-family: "Poppins", sans-serif;
+  margin-left: 4%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  gap: 0.7%;
+  align-items: center;
+  cursor: pointer;
+  i{
+      display: inline;
+  }
+  p{
+      display: inline;
+      font-size: 14px;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2% 5%;
+}
+
+/* Cart section styling */
+.cart-section {
+  width: 60%; /* Takes up 60% of the container width */
+  background: white;
+  border: 1% solid #ddd;
+  border-radius: 1%;
+  padding: 2%;
+}
+
+/* Flexbox for cupcake cards */
+#jspopulator{
+	display: flex;
+	width: 100%;
+	gap: 20px;
+	flex-direction: column;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3%;
+  border-bottom: 1% solid #ddd;
+  padding-bottom: 2%;
+}
+
+.cart-item img {
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover;
+  border-radius: 5%; 
+  margin-right: 3%; 
+}
+
+
+.item-details h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.item-details p {
+  margin: 5% 0;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.item-quantity {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+
+.item-quantity button {
+  width: 35px; 
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #800040;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: center; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 1.2rem; 
+}
+
+.item-quantity button:hover {
+  background: #a00050;
+}
+
+.item-quantity span {
+  margin: 5%;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Bill section styling */
+.bill-section {
+  width: 30%; /* Takes up 30% of the container width */
+  height: 60%; 
+  background: white;
+  border: 1% solid #ddd;
+  border-radius: 1%;
+  padding: 2%;
+}
+
+.bill-summary div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  font-size: 1rem;
+}
+
+.bill-summary hr {
+  margin: 2%;
+  border: none;
+  border-top: 1% solid #ddd;
+}
+
+.checkout-btn {
+  width: 100%;
+  text-align: center;
+  padding: 2%;
+  background: #800040;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #a00050;
+}
+/* Footer */
+.footer {
+	display: flex;
+	flex-direction: column; 
+	background-color: #880e4f; 
+	color: white;
+	padding: 50px;
+	font-family: "poppins", sans-serif;
+	/* margin: 0px; */
+	p{
+		color: white;
+	}
+  }
+  
+  .footer_logo {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 2%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	font-size: 1.1em; 
+	font-family: "Lobster", sans-serif;
+	font-size: 20px;
+  }
+  
+  .city {
+	text-align: left;
+   
+	top: 15%;
+	left: 2%;
+	font-size: 0.9em;
+  }
+  
+  .c {
+	text-align: left;
+	/* position: absolute; */
+	top: 19%;
+	left: 2%;
+	font-size: 0.7em;
+  
+  }
+  
+  .footer_links {
+	margin: 0.5%;
+  }
+  .footer_links a {
+	margin: 1%;
+	color: white;
+	float: right;
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: row;
+  }
+  
+  
+  .icons {
+	margin-top: 10px;
+  }
+  
+  .icons a {
+	margin: 0 10px;
+	font-size: 1.2em;
+	color: white;
+	float: right;
+  }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Cucpake | Cart page</title>
+    <link rel="stylesheet" href="carttest.css">
+</head>
+<body>
+    <html>
+        <div id="jspopulator">
+            
+        </div>
+    </html>
+    <script>
+        window.addEventListener("load", function () {
+            const myDiv = document.getElementById("jspopulator");
+            // Loop through all keys in sessionStorage
+            for (let i = 0; i < sessionStorage.length; i++) {
+                // Get the key and value
+                let key = sessionStorage.key(i);
+                let value = sessionStorage.getItem(key);
+                // Generate HTML for each key-value pair
+                if(key=="chocolate"){
+                    let htmlContent = `<div id="order-details-card">
+                        <div id="cupcake-details">
+                            <img src="chocolate cupcake.jpg" alt="">
+                            <div id="name-price">
+                                <p>Chocolate cupcake</p>
+                                <p>$3.50</p>
+                            </div>
+                        </div>
+                        <p id="cucpake-count"> ${value}</p>
+                    </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="vanilla"){
+                    let htmlContent = `<div id="order-details-card">
+                        <div id="cupcake-details">
+                            <img src="vanilla.jpg" alt="">
+                            <div id="name-price">
+                                <p>Vanilla cupcake</p>
+                                <p>$3.0</p>
+                            </div>
+                        </div>
+                        <p id="cucpake-count"> ${value}</p>
+                    </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="strawberry"){
+                    let htmlContent = `<div id="order-details-card">
+                        <div id="cupcake-details">
+                            <img src="strawberry.jpg" alt="">
+                            <div id="name-price">
+                                <p>Strawberry cupcake</p>
+                                <p>$4.5</p>
+                            </div>
+                        </div>
+                        <p id="cucpake-count"> ${value}</p>
+                    </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="pineapple"){
+                    let htmlContent = `<div id="order-details-card">
+                        <div id="cupcake-details">
+                            <img src="pineapple.jpg" alt="">
+                            <div id="name-price">
+                                <p>Pineapple cupcake</p>
+                                <p>$5.0</p>
+                            </div>
+                        </div>
+                        <p id="cucpake-count"> ${value}</p>
+                    </div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

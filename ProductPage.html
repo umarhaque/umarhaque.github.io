@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Header -->
+<div id="header">
+  <div id="header-content">
+    <div id="logo">
+      <i class="fa-solid fa-cake-candles"></i>
+      <p>TorontoCupcake</p>
+    </div>
+    <div id="pages-icons">
+      <p id="navpage1">Cupcakes</p>
+      <p id="navpage2">About us</p>
+      <p id="navpage3">Special orders</p>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <div id="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p id="cart-value">(0)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/5f673fb283.js" crossorigin="anonymous"></script>
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="ProductPage.css">
+</head>
+
+<body>
+  <main class="product-page">
+
+   <!-- Back Button Navigation -->
+   <div id="back-button">
+    <i class="fa-solid fa-arrow-left"></i>
+    <button id="backButton">Back</button>
+  </div>
+
+  <!-- Breadcrumb for navigation -->
+  <div class="breadcrumb">
+    <a href="#">Home</a> &gt; 
+    <a href="#">Item selection</a> &gt; 
+    <a href="#">Description</a>
+  </div>
+
+  <!-- Product information container -->
+  <div class="product-container">
+    <!-- Product image -->
+    <div class="product-image">
+      <img src="Chocolate-Cupcakes-SM-5629.jpg" alt="Chocolate cupcake">
+    </div>
+
+    <!-- Product details -->
+    <div class="product-details">
+      <h1>Chocolate Cupcake</h1>
+      <p>4.5 star rating <span class="bestseller">Bestseller</span></p>
+      <p>350 Kcal</p>
+      <p> A vanilla cupcake is a small, moist cake with a distinctively sweet and aromatic vanilla flavor. Its tender crumb and subtle sweetness make it a universally beloved treat. Topped with a swirl of vanilla frosting, it's a simple yet delightful dessert that brings joy with every bite.
+      </p>
+
+      <!-- Buttons for interaction -->
+      <!-- Custom Order Button -->
+      <div class="custom-order-container">
+        <button class="custom-order">Custom Order</button>
+      </div>
+      <div class="add-to-cart">
+        <button id="decrease">-</button>
+        <span id="quantity">1</span>
+        <button id="increase">+</button>
+        <button id="add-cart-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  var choccupcake = document.querySelector("#add-cart-button");
+  choccupcake.addEventListener("click", cartData);
+  function cartData(){
+    // Checking whether session has a cart key
+    // If no cart key then create key and add 1 to it
+    // else increase cart value by 1 and insert next to cart icon p tag
+    if(sessionStorage.getItem("cartvalue") == null){
+      sessionStorage.setItem("cartvalue", "1")
+      document.querySelector("#cart-value").textContent = "1";
+    }else{
+      var cartvalue = parseInt(sessionStorage.getItem("cartvalue"));
+      var counter = parseInt(document.querySelector("#quantity").innerText);
+      cartvalue = cartvalue + counter;
+      sessionStorage.setItem("cartvalue", cartvalue.toString());
+      document.querySelector("#cart-value").textContent = cartvalue.toString();
+    }
+    // Seprate conditional block for chocolate cupcake buttonclick
+    if(this.id=="add-cart-button"){
+      if(sessionStorage.getItem("chocolate") == null){
+        var counter = parseInt(document.querySelector("#quantity").innerText);
+        sessionStorage.setItem("chocolate",counter)
+      }else{
+        var quantity = parseInt(sessionStorage.getItem("chocolate"));
+        var counter = parseInt(document.querySelector("#quantity").innerText);
+        quantity = quantity + counter;
+        sessionStorage.setItem("chocolate", quantity.toString());
+      }
+    }
+  }
+  // Function to check value of cart sessionStorage key on startup to populate cart value
+  function startup(){
+    if(sessionStorage.getItem("cartvalue") == null){
+      document.querySelector("#cart-value").textContent = "0";
+    }else{
+      document.querySelector("#cart-value").textContent = sessionStorage.getItem("cartvalue");
+    }
+  }
+  window.onload = startup;
+
+// Cupcake card redirection
+// var cupcakecard = document.querySelector("#cupcake");
+// cupcakecard.addEventListener("click", clickRedirect);
+var back = document.querySelector("#back-button");
+back.addEventListener("click", clickRedirect);
+function clickRedirect(){
+  if(this.id=="back-button"){
+    window.location.href="menu.html"
+  }
+}
+
+  // Function for navbar links - adds underline on hover
+  var page1 = document.querySelector("#navpage1");
+  page1.addEventListener("mouseover", hover);
+  page1.addEventListener("mouseout", rest);
+  var page2 = document.querySelector("#navpage2");
+  page2.addEventListener("mouseover", hover);
+  page2.addEventListener("mouseout", rest);
+  var page3 = document.querySelector("#navpage3");
+  page3.addEventListener("mouseover", hover);
+  page3.addEventListener("mouseout", rest);
+  function hover(){
+    if(this.id=="navpage1"){
+      page1.style.borderBottom="2px solid white";
+    }
+    if(this.id=="navpage2"){
+      page2.style.borderBottom="2px solid white";
+    }
+    if(this.id=="navpage3"){
+      page3.style.borderBottom="2px solid white";
+    }
+  }
+  function rest(){
+    if(this.id=="navpage1"){
+      page1.style.borderBottom="0px";
+    }
+    if(this.id=="navpage2"){
+      page2.style.borderBottom="0px";
+    }
+    if(this.id=="navpage3"){
+      page3.style.borderBottom="0px";
+    }
+  }
+
+ // Get references to DOM elements
+  const decreaseBtn = document.getElementById("decrease");
+  const increaseBtn = document.getElementById("increase");
+  const quantityDisplay = document.getElementById("quantity");
+
+// Define minimum and maximum quantity values
+  const MIN_QUANTITY = 1;
+  const MAX_QUANTITY = 5;
+
+// Initialize the quantity
+  let quantity = MIN_QUANTITY;
+
+// Function to update the button states and quantity display
+  function updateUI() {
+    decreaseBtn.disabled = quantity === MIN_QUANTITY;
+    increaseBtn.disabled = quantity === MAX_QUANTITY;
+    quantityDisplay.textContent = quantity;
+  }
+
+// Event listeners for buttons
+  decreaseBtn.addEventListener("click", () => {
+    if (quantity > MIN_QUANTITY) quantity--;
+    updateUI();
+  });
+
+  increaseBtn.addEventListener("click", () => {
+    if (quantity < MAX_QUANTITY) quantity++;
+    updateUI();
+  });
+
+// Initialize the UI on page load
+  updateUI();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+</head>
+<body>
+    <h1 id="heading1"> The heading </h1>
+    <p id="p1">A paragraph</p>
+    <p id="p2">Another paragraph</p>
+    <p id="p3">Yet another paragraph</p>
+    <input type="button" value="Click me!" id="mybutton">
+    <script>
+        // // In class problem 2 and 3:
+        var heading1=document.querySelector("#heading1");
+        var para1=document.querySelector("#p1")
+        heading1.addEventListener("mouseout", doThisWhenMouseout);
+        heading1.addEventListener("mouseover", doThisWhenMouseover);
+        para1.addEventListener("mouseout", doThisWhenMouseout);
+        para1.addEventListener("mouseover", doThisWhenMouseover);
+        function doThisWhenMouseover(){
+            this.style.background="blue";
+            this.style.color="white"
+            if(this.id=="heading1"){
+                this.textContent ="You are on h1";
+            }
+            else{
+                this.textContent="You are on p1";
+            }
+        }
+        function doThisWhenMouseout(){
+            this.style.background="white";
+            this.style.color="black"
+            if(this.id=="heading1"){
+                this.textContent ="The Heading";
+            }
+            else{
+                this.textContent="A paragraph";
+            }
+        }
+        
+        // // In class problem 1:
+        // var button=document.querySelector("#mybutton");
+        // button.addEventListener("click", doThisWhenClicked);
+        // function doThisWhenClicked(){
+        //     var para3=document.querySelector("#p3");
+        //     para3.textContent="The button is clicked";
+        // }
+
+        // // Event listener
+        // var button=document.querySelector("#mybutton");
+        // button.addEventListener("click", doThisWhenClicked);
+        // function doThisWhenClicked(){
+        //     alert("Inside the Event Listener, button was clicked!");
+        // }
+
+        // // Basic Function
+        // logIn();
+        // function logIn(){
+        //     var userName = prompt("Please enter your username");
+        //     if(userName=="admin"){
+        //         alert("Login successful");
+        //     }
+        //     else{
+        //         alert("Wrong username");
+        //     }
+        // }    
+    </script>
+</body>
+</html>

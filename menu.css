@@ -1,0 +1,306 @@
+:root{
+    --accent: #8D0054;
+    --accent-light: #EFDBE7;
+    --gold: #965A00;
+    --gold-light: #FFEFD8;
+    --page-bg: #f6f6f6;
+    --white-bg: #ffffff;
+    --text: #000000;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--page-bg);
+}
+
+/* Header */
+#header{
+    background: var(--accent);
+    height: 80px;
+    #header-content{
+        display: flex;
+        flex-direction: row;
+        color: var(--white-bg);
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 4%;
+        margin-right: 4%;
+        height: 100%;
+        #logo{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            font-size: 28px;
+            font-family: "Lobster", sans-serif;
+        }
+        #pages-icons{
+            font-size: 16px;
+            font-family: "poppins", sans-serif;
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            font-weight: 500;
+            align-items: center;
+            a{
+                color: var(--white-bg);
+                text-decoration: none;
+            }
+            i{
+                color: var(--white-bg);
+            }
+            #cart{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+/* Back button */
+#back-button{
+    font-family: "Poppins", sans-serif;
+    margin-left: 4%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.7%;
+    align-items: center;
+    cursor: pointer;
+    i{
+        display: inline;
+    }
+    p{
+        display: inline;
+        font-size: 14px;
+    }
+}
+
+/* Breadcrumbs */
+#breadcrumbs{
+    font-family: "Poppins", sans-serif;
+    margin-left: 4%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.7%;
+    align-items: center;
+    i{
+        display: inline;
+    }
+    a{
+        display: inline;
+        font-size: 14px;
+        color: var(--text);
+        text-decoration: none;
+    }
+}
+
+/* Filter Section */
+#filters{
+    font-family: "Poppins", sans-serif;
+    margin: 2% 4%;
+    background: var(--white-bg);
+    border-radius: 12px;
+    padding: 2%;
+    font-size: 20px;
+    font-weight: bold;
+    #chip-container{
+        display: flex;
+        flex-direction: row;
+        gap: 2%;
+        margin-top: 1.3%;
+        #filter-chip{
+            padding: 0.5% 1.5%;
+            border: 2.5px solid var(--accent);
+            border-radius: 1000px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
+
+/* Menu section 1 header - Always available */
+#menu-section1-header{
+    display: flex;
+    flex-direction: row;
+    margin: 2% 4%;
+    font-family: "Lobster", sans-serif !important;
+    color: var(--text);
+    font-size: 32px;
+}
+
+/* Cupcake card */
+#cupcake-grid{
+    display: grid;
+    margin: 2% 4%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+#cupcake{
+    cursor: pointer;
+    font-family: "poppins", sans-serif;
+    display: flex;
+    background: var(--white-bg);
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 7%;
+    width: 85%;
+    /* Image expand on hover - imagine within a container to avoid overflow on hover transformation */
+    #imagecontainer{
+        overflow: hidden;
+        border-radius: 8px;
+        height: 200px;
+        margin-bottom: 6%;
+    }
+    img{
+        height: 200px;
+        width: 100%;
+        margin-bottom: 6%;
+        border-radius: 8px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.6s ease-in-out;
+    }
+    img:hover{
+        transform: scale(1.2);
+    }
+    #cupcake-info{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        #cupcake-name-price{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            #cupcake-name{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            #cupcake-price{
+                font-size: 16px;
+            }
+        }
+        #cupcake-nutrition{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            #cupcake-calories{
+                font-size: 14px;
+            }
+            #nutrition-info{
+                color: var(--accent);
+                font-size: 14px;
+            }
+        }
+        #cupcake-tags{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            #rating-tag{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+                background: var(--accent-light);
+                padding: 2% 4%;
+                border-radius: 100px;
+                font-size: 12px;
+                color: var(--accent);
+                font-weight: 500;
+            }
+            #special-tag{
+                background: var(--gold-light);
+                color: var(--gold);
+                padding: 2% 4%;
+                font-weight: 500;
+                border-radius: 100px;
+                font-size: 12px;
+            }
+        }
+        #cupcake-cart-button input{
+            background: var(--accent);
+            color: var(--white-bg);
+            height: 40px;
+            width: 100%;
+            border: 0px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: "Poppins", sans-serif;
+            cursor: pointer;
+        }
+    }
+}
+
+/* Footer */
+.footer {
+	display: flex;
+	flex-direction: column; 
+	background-color: #880e4f; 
+	color: white;
+	padding: 50px;
+	font-family: "poppins", sans-serif;
+	/* margin: 0px; */
+	p{
+		color: white;
+	}
+  }
+  
+  .footer_logo {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 2%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	font-size: 1.1em; 
+	font-family: "Lobster", sans-serif;
+	font-size: 20px;
+  }
+  
+  .city {
+	text-align: left;
+   
+	top: 15%;
+	left: 2%;
+	font-size: 0.9em;
+  }
+  
+  .c {
+	text-align: left;
+	/* position: absolute; */
+	top: 19%;
+	left: 2%;
+	font-size: 0.7em;
+  
+  }
+  
+  .footer_links {
+	margin: 0.5%;
+  }
+  .footer_links a {
+	margin: 1%;
+	color: white;
+	float: right;
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: row;
+  }
+  
+  
+  .icons {
+	margin-top: 10px;
+  }
+  
+  .icons a {
+	margin: 0 10px;
+	font-size: 1.2em;
+	color: white;
+	float: right;
+  }

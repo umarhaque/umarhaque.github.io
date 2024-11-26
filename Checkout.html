@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toronto Cupcake Checkout</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Checkout.css">
+	<script src="https://kit.fontawesome.com/5f673fb283.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Header -->
+    <div id="header">
+        <div id="header-content">
+            <div id="logo">
+                <i class="fa-solid fa-cake-candles"></i>
+                <p>TorontoCupcake</p>
+            </div>
+            <div id="pages-icons">
+                <a id="navpage1" href="">Cupcakes</a>
+                <a id="navpage2" href="">About us</a>
+                <a id="navpage3" href="">Special orders</a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div id="cart">
+                    <a href="Checkout.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <p id="cart-value">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Back button -->
+	<div id="back-button">
+		<i class="fa-solid fa-arrow-left"></i>
+		<a href>Back</a>
+	</div>
+
+	<!-- Breadcrumbs -->
+	<div id="breadcrumbs">
+		<a href="">Home</a>
+		<i class="fa-solid fa-chevron-right"></i>
+		<a href="">Menu</a>
+		<i class="fa-solid fa-chevron-right"></i>
+		<a href="">Cart</a>
+		<i class="fa-solid fa-chevron-right"></i>
+		<a href="">Checkout</a>
+		<i class="fa-solid fa-chevron-right"></i>
+	</div>
+
+	<!-- Whole Section -->
+	<div class="container">
+		<div id="leftsection">
+			<!-- (Left Section) -->
+			<div class="cardtitle">Checkout</div>
+			
+			<!-- Checkout -->
+			<div id="checkout"> 
+
+
+				<!-- Delivery -->	
+				<div class="t2">Delivery</div>
+				<div class="linebox"></div>
+				<div class="form">
+					<p>Receiver's Name</p>
+					<input type="text" id="name" placeholder="Eg. Jack Holmes">
+				</div>
+				<div class="form">
+					<p>Receiver's Number</p>
+					<input type="tel" id="number" placeholder="Eg. +1 647 283 8470" maxlength="15">
+				</div>
+				<div class="form">
+					<p>Email for order tracking purposes</p>
+					<input type="email" id="email" placeholder="Eg. abc@xyz.com">
+				</div>
+
+				<!-- Delivery details -->
+				<div class="t2">Delivery details</div>
+				<div class="linebox"></div>
+				<div class="form">
+					<p>Address Line 1</p>
+					<input type="text" id="add1" placeholder="Eg. 21 Nature valley, Etobicoke, Ontario">
+				</div>
+				<div class="form">
+					<p>Address Line 2 (Optional)</p>
+					<input type="text" id="add2" placeholder="Eg. 21 Nature valley, Etobicoke, Ontario">
+				</div>
+				<div class="form">
+					<p>Postal Code</p>
+					<input type="text" id="pcode" placeholder="Eg. N67 V9B">
+				</div>
+
+				<!-- Payment Method -->
+				<div class="t2">Select Payment Method</div>
+				<div class="linebox"></div>
+				<div class="form"> 
+					<div id="payment-method">
+						<div class="i-t-b">
+							<div class="icons-text">
+								<div class="icons">
+									<img src="visa.svg" alt="">
+									<img src="mcard.svg" alt="">
+								</div>
+								<p>Credit card / Debit card</p>
+							</div>
+							<div class="radio">
+								<input type="radio" name="payment" value="credit-card">
+							</div>							
+						</div>
+						<div class="i-t-b">
+							<div class="icons-text">
+								<div class="icons">
+									<img src="apay.svg" alt="">
+								</div>
+								<p>Apple Pay</p>
+							</div>
+							<div class="radio">
+								<input type="radio" name="payment" value="apple-pay">
+							</div>							
+						</div>
+						<div class="i-t-b">
+							<div class="icons-text">
+								<div class="icons">
+									<img src="gpay.svg" alt="">
+								</div>
+								<p>Google Pay</p>
+							</div>
+							<div class="radio">
+								<input type="radio" name="payment" value="google-pay">
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- (Right Section) -->
+		<div id="rightsection">
+
+			<!-- Order Details -->
+			<div class="cardtitle">Order Details</div>
+			<div id="jspopulator">
+				<!-- <div id="orderdetails"> 
+					<div id="cupcakecheckout" >
+						<img src="cupcakecheckout.svg" alt=""> 
+					</div>
+					<div class="info">
+						<div id="info1">
+							<p>Chocolate Cupcake</p>
+							<h5>$3.50</h5>
+						</div>
+						<div id="info2">
+							Vanilla Frosting<br>
+							No cultery
+						</div>
+					</div>
+					<div class="info">x1</div>
+				</div> -->
+			</div>
+
+			<!-- Bill Summary -->
+			<div class="cardtitle">Bill Summary</div>
+			<div id="billsummary"> 
+				<div class="text-prices">
+					<p>Item Total</p>
+					<h5 id="itemtotal"></h5>
+				</div>
+				<div class="text-prices">
+					<p>HST</p>
+					<p id="hst"></p>
+				</div>
+				<div class="text-prices">
+					<p>Platform fee</p>
+					<h5>$0.80</h5>
+				</div>
+				<!-- <div class="text-prices">
+					<p>Delivery fee</p>
+					<h5>$1.00</h5>
+				</div> -->
+				<div class="linebox"></div>
+				<div class="text-prices">
+					<p>Total</p>
+					<h5 id="totalprice"></h5>
+				</div>
+			</div>
+
+
+			<!-- Make Payment Button -->
+			<div id="payment">
+				<input type="button" value="Make Payment" id="paybutton">
+			</div>
+			
+		</div>
+	</div>
+	<div class="footer">
+
+		<div class="footer_logo"> 
+			<i class="fa-solid fa-cake-candles"></i>
+			<p>Toronto Cupcake</p>
+		</div>
+		<div class="city">
+			<p>Downtown, Toronto.</p>
+		</div>
+		<div class="footer_links">
+		  <a><p>Contact Us</p></a>
+		  <a><p>FAQs</p></a>
+		  <a><p>Resources</p></a>
+		  <a><p>Privacy Policy</p></a>
+		</div>
+		<div class="icons">
+		  <a><i class="fa-brands fa-instagram"></i></a>
+		  <a><i class="fa-brands fa-facebook"></i></a>
+		  <a><i class="fa-brands fa-x-twitter"></i></a>
+		</div>
+		<div class="c">
+			<i class="fa-regular fa-copyright"></i>
+			<p>2023 Toronto Cupcakes. All Rights Reserved.</p>
+		</div>
+	</div>
+	<script>
+		// Startup cart value and order details card
+		function startup(){
+			var hst = sessionStorage.getItem("hst");
+			var total = sessionStorage.getItem("totalprice");
+			var itemtotal = sessionStorage.getItem("itemtotal")
+			console.log(sessionStorage.getItem("hst"))
+			document.querySelector("#hst").textContent = hst;
+			document.querySelector("#totalprice").textContent = total;
+			document.querySelector("#itemtotal").textContent = itemtotal;
+            if(sessionStorage.getItem("cartvalue") == null){
+                document.querySelector("#cart-value").textContent = "0";
+            }else{
+                document.querySelector("#cart-value").textContent = sessionStorage.getItem("cartvalue");
+            }
+			var myDiv = document.getElementById("jspopulator");
+            // Loop through all keys in sessionStorage
+            for (let i = 0; i < sessionStorage.length; i++) {
+                // Get the key and value
+                var key = sessionStorage.key(i);
+                var value = sessionStorage.getItem(key);
+                // Generate HTML for each key-value pair
+                if(key=="chocolate"){
+                    let htmlContent = `<div id="orderdetails"> 
+					<div id="cupcakecheckout" >
+						<img src="cupcakecheckout.svg" alt=""> 
+					</div>
+					<div class="info">
+						<div id="info1">
+							<p>Chocolate Cupcake</p>
+							<h5>$3.50</h5>
+						</div>
+						<div id="info2">
+							Vanilla Frosting<br>
+							No cultery
+						</div>
+					</div>
+					<div class="info">${value}</div>
+				</div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="vanilla"){
+                    let htmlContent = `<div id="orderdetails"> 
+					<div id="cupcakecheckout" >
+						<img src="vanilla.jpg" alt=""> 
+					</div>
+					<div class="info">
+						<div id="info1">
+							<p>Vanilla Cupcake</p>
+							<h5>$3.0</h5>
+						</div>
+						<div id="info2">
+							Vanilla Frosting<br>
+							No cultery
+						</div>
+					</div>
+					<div class="info">${value}</div>
+				</div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="strawberry"){
+                    let htmlContent = `<div id="orderdetails"> 
+					<div id="cupcakecheckout" >
+						<img src="strawberry.jpg" alt=""> 
+					</div>
+					<div class="info">
+						<div id="info1">
+							<p>Strawberry Cupcake</p>
+							<h5>$4.5</h5>
+						</div>
+						<div id="info2">
+							Vanilla Frosting<br>
+							No cultery
+						</div>
+					</div>
+					<div class="info">${value}</div>
+				</div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+                if(key=="pineapple"){
+                    let htmlContent = `<div id="orderdetails"> 
+					<div id="cupcakecheckout" >
+						<img src="pineapple.jpg" alt=""> 
+					</div>
+					<div class="info">
+						<div id="info1">
+							<p>Pineapple Cupcake</p>
+							<h5>$5.0</h5>
+						</div>
+						<div id="info2">
+							Vanilla Frosting<br>
+							No cultery
+						</div>
+					</div>
+					<div class="info">${value}</div>
+				</div>`;
+                    // Append the generated HTML to the div
+                    myDiv.innerHTML += htmlContent;
+                }
+            }
+        }
+        window.onload = startup;
+
+		// Javascript insert hst and total price
+		// function dynamicprice(){
+		// 	var hst = sessionStorage.getItem("hst");
+		// 	var total = sessionStorage.getItem("totalprice");
+		// 	var itemtotal = sessionStorage.getItem("itemtotal")
+		// 	console.log(sessionStorage.getItem("hst"))
+		// 	document.querySelector("#hst").textContent = hst;
+		// 	document.querySelector("#totalprice").textContent = total;
+		// 	document.querySelector("#itemtotal").textContent = itemtotal;
+			// var totalpricelabel = document.querySelector("#totalprice");
+			// var itemtotallabel = document.querySelector("#itemtotal");
+			// itemtotallabel.textContent = itemtotal;
+			// totalpricelabel.textContent = total;
+			// hstlabellabel.textContent = hst;
+		// }
+		// window.onload  = dynamicprice;
+		// const nameInput = document.getElementById("name");
+		// const numberInput = document.getElementById("number");
+		// const emailInput = document.getElementById("email");
+		// const add1Input = document.getElementById("add1");
+		// const add2Input = document.getElementById("add2");
+		// const pcodeInput = document.getElementById("pcode");
+
+		
+		// // Number Pattern //
+		// numberInput.addEventListener("click", addCountryCode);
+		// numberInput.addEventListener("blur", validatePhoneNumber);
+
+		// function addCountryCode() {
+	    // 	if (!numberInput.value.startsWith("+1")) {
+	    //     numberInput.value = "+1 ";}
+		// 	}
+
+		// function validatePhoneNumber() {
+		//     const phonePattern = /^\+1 [0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+		//     if (!phonePattern.test(numberInput.value.trim())) {
+		//         numberInput.classList.add("error");
+		//     } 
+		//     else {
+		//         numberInput.classList.remove("error");
+		//     }
+		// }
+
+		// // Error Red //
+		// nameInput.addEventListener("blur", validateInput);
+		// numberInput.addEventListener("blur", validateInput);
+		// emailInput.addEventListener("blur", validateInput);
+		// address1Input.addEventListener("blur", validateInput);
+		// address2Input.addEventListener("blur", validateInput);
+		// postalCodeInput.addEventListener("blur", validateInput);
+
+		// function validateInput() {
+		//     if (numberInput.value.trim() == "abcd") {
+        // 	numberInput.style.border = "2px solid red";
+    	// 	}
+		// }
+
+
+
+		// // Hover paybutton //
+		// const payButton = document.getElementById("paybutton");
+
+				
+		// 		payButton.addEventListener("mouseover", whileHover); 
+		// 		payButton.addEventListener("mouseout", normal);
+
+		// 		function whileHover() {
+		// 			payButton.style.backgroundColor = "#730246";
+		// 		}
+		// 		function normal() {
+		// 			payButton.style.backgroundColor = "#8D0054";
+		// 		}
+	
+        var back = document.querySelector("#back-button");
+        back.addEventListener("click", clickRedirect);
+		var makepayment = document.querySelector("#paybutton");
+		makepayment.addEventListener("click", clickRedirect)
+        function clickRedirect(){
+            if(this.id=="back-button"){
+                window.location.href="CartPage.html"
+            }else{
+                window.location.href="Confirmation.html";
+            }
+        }
+</script>
+</body>
+</html>
