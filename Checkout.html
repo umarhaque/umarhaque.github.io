@@ -24,7 +24,7 @@
                 <a id="navpage3" href="">Special orders</a>
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <div id="cart">
-                    <a href="Checkout.html">
+                    <a href="CartPage.html">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                     <p id="cart-value">0</p>
@@ -36,7 +36,7 @@
 	<!-- Back button -->
 	<div id="back-button">
 		<i class="fa-solid fa-arrow-left"></i>
-		<a href>Back</a>
+		<p>Back</p>
 	</div>
 
 	<!-- Breadcrumbs -->
@@ -244,7 +244,7 @@
                 var key = sessionStorage.key(i);
                 var value = sessionStorage.getItem(key);
                 // Generate HTML for each key-value pair
-                if(key=="chocolate"){
+                if(key=="chocolate" && value!="0"){
                     let htmlContent = `<div id="orderdetails"> 
 					<div id="cupcakecheckout" >
 						<img src="cupcakecheckout.svg" alt=""> 
@@ -264,7 +264,7 @@
                     // Append the generated HTML to the div
                     myDiv.innerHTML += htmlContent;
                 }
-                if(key=="vanilla"){
+                if(key=="vanilla" && value!="0"){
                     let htmlContent = `<div id="orderdetails"> 
 					<div id="cupcakecheckout" >
 						<img src="vanilla.jpg" alt=""> 
@@ -284,7 +284,7 @@
                     // Append the generated HTML to the div
                     myDiv.innerHTML += htmlContent;
                 }
-                if(key=="strawberry"){
+                if(key=="strawberry" && value!="0"){
                     let htmlContent = `<div id="orderdetails"> 
 					<div id="cupcakecheckout" >
 						<img src="strawberry.jpg" alt=""> 
@@ -304,7 +304,7 @@
                     // Append the generated HTML to the div
                     myDiv.innerHTML += htmlContent;
                 }
-                if(key=="pineapple"){
+                if(key=="pineapple" && value!="0"){
                     let htmlContent = `<div id="orderdetails"> 
 					<div id="cupcakecheckout" >
 						<img src="pineapple.jpg" alt=""> 
@@ -404,7 +404,7 @@
         var back = document.querySelector("#back-button");
         back.addEventListener("click", clickRedirect);
 		var makepayment = document.querySelector("#paybutton");
-		makepayment.addEventListener("click", clickRedirect)
+		makepayment.addEventListener("click", clickRedirect);
         function clickRedirect(){
             if(this.id=="back-button"){
                 window.location.href="CartPage.html"

@@ -59,7 +59,7 @@
 
       <!-- Buttons for interaction -->
       <!-- Custom Order Button -->
-      <div class="custom-order-container">
+      <div class="custom-order-container" id="customorder">
         <button class="custom-order">Custom Order</button>
       </div>
       <div class="add-to-cart">
@@ -70,6 +70,31 @@
       </div>
     </div>
   </div>
+  <div class="footer">
+
+		<div class="footer_logo"> 
+			<i class="fa-solid fa-cake-candles"></i>
+			<p>Toronto Cupcake</p>
+		</div>
+		<div class="city">
+			<p>Downtown, Toronto.</p>
+		</div>
+		<div class="footer_links">
+		  <a><p>Contact Us</p></a>
+		  <a><p>FAQs</p></a>
+		  <a><p>Resources</p></a>
+		  <a><p>Privacy Policy</p></a>
+		</div>
+		<div class="icons">
+		  <a><i class="fa-brands fa-instagram"></i></a>
+		  <a><i class="fa-brands fa-facebook"></i></a>
+		  <a><i class="fa-brands fa-x-twitter"></i></a>
+		</div>
+		<div class="c">
+			<i class="fa-regular fa-copyright"></i>
+			<p>2023 Toronto Cupcakes. All Rights Reserved.</p>
+		</div>
+	</div>
 </main>
 
 <script>
@@ -116,10 +141,19 @@
 // var cupcakecard = document.querySelector("#cupcake");
 // cupcakecard.addEventListener("click", clickRedirect);
 var back = document.querySelector("#back-button");
+var cart = document.querySelector("#cart");
+cart.addEventListener("click", clickRedirect);
 back.addEventListener("click", clickRedirect);
+var custom = document.querySelector("#customorder")
+custom.addEventListener("click", clickRedirect)
 function clickRedirect(){
   if(this.id=="back-button"){
     window.location.href="menu.html"
+  }else if(this.id=="cart"){
+    window.location.href="CartPage.html";
+  }
+  else{
+    window.location.href="Form Page.html"
   }
 }
 

@@ -64,6 +64,7 @@ body {
 
 /* Back Button */
 #back-button{
+	cursor: pointer;
     font-family: "Poppins", sans-serif;
     margin-left: 4%;
     margin-top: 2%;
@@ -107,7 +108,7 @@ body {
 /* Whole Section */
 .container{
 	width: 100%;
-	height: 1110px;
+	height: 1100px;
 	margin-bottom: 6%;
 	padding: 2.5%;
     display: flex;
@@ -244,6 +245,7 @@ p{
 	height: 1110px;
 	display: flex;
 	flex-direction: column;
+	/* margin-bottom: 5%; */
 }
 
 /* Order Details */
@@ -355,6 +357,7 @@ p{
 
 /* Footer */
 .footer {
+	margin-top: 400px;
 	display: flex;
 	flex-direction: column; 
 	background-color: #880e4f; 

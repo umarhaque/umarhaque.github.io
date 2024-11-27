@@ -20,7 +20,7 @@
                 <p>TorontoCupcake</p>
             </div>
             <div id="pages-icons">
-                <a id="navpage1" href="">Cupcakes</a>
+                <a id="navpage1" href="menu.html">Cupcakes</a>
                 <a id="navpage2" href="">About us</a>
                 <a id="navpage3" href="Form Page.html">Special orders</a>
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -105,7 +105,7 @@ orderButton.addEventListener("mouseleave", () => {
     orderButton.style.transform = "scale(1)";     // Reset zoom effect
 });
 		var spccard = document.querySelector("#special");
-		makepayment.addEventListener("click", clickRedirect)
+		spccard.addEventListener("click", clickRedirect)
         function clickRedirect(){
             if(this.id=="back-button"){
                 window.location.href="CartPage.html"

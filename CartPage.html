@@ -23,12 +23,12 @@
           <p>TorontoCupcake</p>
       </div>
       <div id="pages-icons">
-          <a id="navpage1" href="">Cupcakes</a>
+          <a id="navpage1" href="menu.css">Cupcakes</a>
           <a id="navpage2" href="">About us</a>
-          <a id="navpage3" href="">Special orders</a>
+          <a id="navpage3" href="Form Page.html">Special orders</a>
           <i class="fa-solid fa-magnifying-glass"></i>
           <div id="cart">
-              <a href="Checkout.html">
+              <a href="CartPage.css">
                   <i class="fa-solid fa-cart-shopping"></i>
               </a>
               <p id="cart-value">0</p>
@@ -152,7 +152,7 @@
                 let key = sessionStorage.key(i);
                 let value = sessionStorage.getItem(key);
                 // Generate HTML for each key-value pair
-                if(key=="chocolate"){
+                if(key=="chocolate" && value!="0"){
                     let htmlContent = `<div class="cart-item">
         <img src="chocolate cupcake.jpg" alt="Chocolate Cupcake">
         <div class="item-details">
@@ -168,7 +168,7 @@
                     // Append the generated HTML to the div
                     myDiv.innerHTML += htmlContent;
                 }
-                if(key=="vanilla"){
+                if(key=="vanilla" && value!="0"){
                     let htmlContent = `<div class="cart-item">
         <img src="vanilla.jpg" alt="Vanilla Cupcake">
         <div class="item-details">
@@ -184,7 +184,7 @@
                     // Append the generated HTML to the div
                     myDiv.innerHTML += htmlContent;
                 }
-                if(key=="strawberry"){
+                if(key=="strawberry" && value!="0"){
                     let htmlContent = `<div class="cart-item">
         <img src="strawberry.jpg" alt="Strawberry Cupcake">
         <div class="item-details">
@@ -200,7 +200,7 @@
                     // Append the generated HTML to the div
                     myDiv.innerHTML += htmlContent;
                 }
-                if(key=="pineapple"){
+                if(key=="pineapple" && value!="0"){
                     let htmlContent = `<div class="cart-item">
         <img src="pineapple.jpg" alt="Pineapple Cupcake">
         <div class="item-details">
@@ -220,7 +220,21 @@
   }
   window.onload = startup;
 
-  // Static quantities
+  // After finding out that NaN shows up if all types of cupcakes are not added meaning the sessionstorage item does not exist. The session storage key is created if it does not exist to overcome that issue
+  if(!sessionStorage.getItem("chocolate")){
+    sessionStorage.setItem("chocolate", "0");
+  }
+  if(!sessionStorage.getItem("strawberry")){
+    sessionStorage.setItem("strawberry", "0");
+  }
+  if(!sessionStorage.getItem("vanilla")){
+    sessionStorage.setItem("vanilla", "0");
+  }
+  if(!sessionStorage.getItem("pineapple")){
+    sessionStorage.setItem("pineapple", "0");
+  }
+
+  // Static value
   let cupcakeQuantities = {
     chocolate: parseInt(sessionStorage.getItem("chocolate")),
     vanilla: parseInt(sessionStorage.getItem("vanilla")),
@@ -277,9 +291,9 @@
 
     const hst = itemTotal * HST_RATE;
     const total = itemTotal + hst + PLATFORM_FEE;
-    var itemtotal = parseInt(itemTotal);
-    var totalpricestring = parseInt(total);
-    var hststring = parseInt(hst);
+    var itemtotal = parseFloat(itemTotal).toFixed(2);
+    var totalpricestring = parseFloat(total).toFixed(2);
+    var hststring = parseFloat(hst).toFixed(2);
     sessionStorage.setItem("itemtotal", `${itemtotal}`);
     sessionStorage.setItem("totalprice", `${totalpricestring}`);
     sessionStorage.setItem("hst", `${hststring}`);

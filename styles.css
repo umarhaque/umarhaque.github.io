@@ -66,6 +66,10 @@ body {
     }
 }
 
+#special{
+    cursor: pointer;
+}
+
 .logo {
     display: flex;
     align-items: center;

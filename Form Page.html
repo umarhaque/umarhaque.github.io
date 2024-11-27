@@ -234,7 +234,9 @@
   float: right;
 }
 
-
+#back-button{
+  cursor: pointer;
+}
 
 </style>
 
@@ -263,10 +265,10 @@
             </div>
         </div>
     </div>
-<!-- <div id="back-button">
+<div id="back-button">
     <i class="fa-solid fa-arrow-left"></i>
-    <a href>Back</a>
-</div> -->
+    <p>Back</p>
+</div>
 
 <!-- <div id="breadcrumbs">
         <a href="">Home</a>
@@ -344,6 +346,13 @@
 
 
 <script>
+  var back = document.querySelector("#back-button");
+  back.addEventListener("click", clickRedirect);
+  function clickRedirect(){
+    if(this.id=="back-button"){
+      window.history.back();
+    }
+  }
 
   document.getElementById("customOrderForm").addEventListener("submit", function () {
     const emailField = document.getElementById("email");

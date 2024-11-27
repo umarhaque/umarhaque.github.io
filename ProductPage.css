@@ -189,5 +189,70 @@ button:hover {
 .add-cart-button:hover {
   background-color: #660044;
 }
-
+/* Footer */
+.footer {
+	display: flex;
+	flex-direction: column; 
+	background-color: #880e4f; 
+	color: white;
+	padding: 50px;
+	font-family: "poppins", sans-serif;
+	/* margin: 0px; */
+	p{
+		color: white;
+	}
+  }
+  
+  .footer_logo {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 2%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	font-size: 1.1em; 
+	font-family: "Lobster", sans-serif;
+	font-size: 20px;
+  }
+  
+  .city {
+	text-align: left;
+   
+	top: 15%;
+	left: 2%;
+	font-size: 0.9em;
+  }
+  
+  .c {
+	text-align: left;
+	/* position: absolute; */
+	top: 19%;
+	left: 2%;
+	font-size: 0.7em;
+  
+  }
+  
+  .footer_links {
+	margin: 0.5%;
+  }
+  .footer_links a {
+	margin: 1%;
+	color: white;
+	float: right;
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: row;
+  }
+  
+  
+  .icons {
+	margin-top: 10px;
+  }
+  
+  .icons a {
+	margin: 0 10px;
+	font-size: 1.2em;
+	color: white;
+	float: right;
+  }
 
